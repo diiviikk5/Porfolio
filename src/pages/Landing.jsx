@@ -77,14 +77,9 @@ const projects = [
 ]
 
 const skills = [
-  { name: 'React', level: 95 },
-  { name: 'TypeScript', level: 90 },
-  { name: 'Node.js', level: 88 },
-  { name: 'Python', level: 85 },
-  { name: 'Solidity', level: 75 },
-  { name: 'MongoDB', level: 82 },
-  { name: 'AWS', level: 70 },
-  { name: 'Docker', level: 72 }
+  'React', 'TypeScript', 'Node.js', 'Python',
+  'Solidity', 'MongoDB', 'AWS', 'Docker',
+  'Next.js', 'Tailwind CSS', 'PostgreSQL', 'Git'
 ]
 
 // ============================================================================
@@ -796,7 +791,7 @@ const Landing = () => {
                     Divik Arora
                   </h1>
                   <p className="text-lg" style={{ color: theme.comment }}>
-                    // Full Stack Developer | AI Enthusiast | Blockchain Engineer
+                    // I like  code , and contribute to open source .
                   </p>
                 </div>
 
@@ -806,14 +801,13 @@ const Landing = () => {
                     About Me
                   </h2>
                   <p className="leading-relaxed mb-4" style={{ color: theme.text }}>
-                    Passionate developer building digital products at the intersection of
+                    i enjoy coding and thats what matters , i like to build things  and you can check those out on my github !
                     <span style={{ color: theme.type }}> AI</span>,
                     <span style={{ color: theme.function }}> blockchain</span>, and
                     <span style={{ color: theme.string }}> web technologies</span>.
                   </p>
                   <p className="leading-relaxed" style={{ color: theme.text }}>
-                    I believe great software should feel effortless to use. Currently exploring
-                    cutting-edge technologies to create impactful solutions.
+                    Currently into Ai , Fullstack   and just building stuff end to end.
                   </p>
                 </div>
 
@@ -972,44 +966,32 @@ const Landing = () => {
             {/* SKILLS */}
             {activeTab === 'skills' && (
               <div className="max-w-3xl">
-                <div className="mb-4">
-                  <span style={{ color: theme.text }}>{'{'}</span>
+                <div className="mb-6">
+                  <span style={{ color: theme.keyword }}>export const</span>
+                  <span style={{ color: theme.variable }}> skills</span>
+                  <span style={{ color: theme.text }}> = [</span>
                 </div>
 
-                <div className="pl-4 space-y-4">
-                  <div>
-                    <span style={{ color: theme.string }}>"skills"</span>
-                    <span style={{ color: theme.text }}>: {'{'}</span>
-                  </div>
-
-                  <div className="pl-4 space-y-3">
-                    {skills.map((skill, i) => (
-                      <div key={skill.name} className="flex items-center gap-4">
-                        <span className="w-32" style={{ color: theme.string }}>"{skill.name}"</span>
-                        <span style={{ color: theme.text }}>:</span>
-                        <div className="flex-1 max-w-xs">
-                          <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: theme.border }}>
-                            <motion.div
-                              className="h-full"
-                              style={{ backgroundColor: theme.accent }}
-                              initial={{ width: 0 }}
-                              animate={{ width: `${skill.level}%` }}
-                              transition={{ delay: i * 0.1, duration: 0.8 }}
-                            />
-                          </div>
-                        </div>
-                        <span className="w-12" style={{ color: theme.number }}>{skill.level}%</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="pl-0">
-                    <span style={{ color: theme.text }}>{'}'}</span>
-                  </div>
+                <div className="pl-6 grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8">
+                  {skills.map((skill, i) => (
+                    <motion.div
+                      key={skill}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                      className="flex items-center gap-2 group"
+                    >
+                      <span style={{ color: theme.textMuted }}>{i < 10 ? `0${i}` : i}</span>
+                      <span style={{ color: theme.string }} className="group-hover:underline cursor-default">
+                        "{skill}"
+                      </span>
+                      {i < skills.length - 1 && <span style={{ color: theme.text }}>,</span>}
+                    </motion.div>
+                  ))}
                 </div>
 
-                <div className="mt-4">
-                  <span style={{ color: theme.text }}>{'}'}</span>
+                <div className="mt-6">
+                  <span style={{ color: theme.text }}>];</span>
                 </div>
               </div>
             )}
