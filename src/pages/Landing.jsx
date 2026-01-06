@@ -791,7 +791,7 @@ const Landing = () => {
                     Divik Arora
                   </h1>
                   <p className="text-lg" style={{ color: theme.comment }}>
-                    // I like  code , and contribute to open source .
+                    // I like  coding ,bulding , and contributing to open source .
                   </p>
                 </div>
 
