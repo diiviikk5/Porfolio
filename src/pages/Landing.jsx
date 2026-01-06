@@ -801,10 +801,7 @@ const Landing = () => {
                     About Me
                   </h2>
                   <p className="leading-relaxed mb-4" style={{ color: theme.text }}>
-                    i enjoy coding and thats what matters , i like to build things  and you can check those out on my github !
-                    <span style={{ color: theme.type }}> AI</span>,
-                    <span style={{ color: theme.function }}> blockchain</span>, and
-                    <span style={{ color: theme.string }}> web technologies</span>.
+                    i enjoy coding and thats what matters , i like to build things and you can check those out on my github !
                   </p>
                   <p className="leading-relaxed" style={{ color: theme.text }}>
                     Currently into Ai , Fullstack   and just building stuff end to end.
