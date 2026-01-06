@@ -78,8 +78,8 @@ const projects = [
 
 const skills = [
   'React', 'TypeScript', 'Node.js', 'Python',
-  'Solidity', 'MongoDB', 'AWS', 'Docker',
-  'Next.js', 'Tailwind CSS', 'PostgreSQL', 'Git'
+  'C', 'C++', 'HTML', 'CSS', 'JavaScript',
+  'Solidity', 'MongoDB', 'Next.js', 'Tailwind CSS'
 ]
 
 // ============================================================================
