@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   VS CODE THEME - Portfolio
+   ============================================ */
+
+:root {
+  /* VS Code Dark+ Theme Colors */
+  --vscode-bg: #1e1e1e;
+  --vscode-sidebar: #252526;
+  --vscode-activitybar: #333333;
+  --vscode-editor: #1e1e1e;
+  --vscode-tabs: #2d2d2d;
+  --vscode-tab-active: #1e1e1e;
+  --vscode-border: #3c3c3c;
+  --vscode-text: #cccccc;
+  --vscode-text-muted: #858585;
+  --vscode-accent: #007acc;
+  --vscode-accent-hover: #1a8fd1;
+  --vscode-green: #4ec9b0;
+  --vscode-yellow: #dcdcaa;
+  --vscode-orange: #ce9178;
+  --vscode-blue: #569cd6;
+  --vscode-purple: #c586c0;
+  --vscode-red: #f14c4c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--vscode-bg);
+  color: var(--vscode-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Code font */
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+/* VS Code scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vscode-editor);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(121, 121, 121, 0.4);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(121, 121, 121, 0.6);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 122, 204, 0.5);
+}
+
+/* Syntax highlighting colors */
+.syntax-keyword {
+  color: var(--vscode-keyword);
+}
+
+.syntax-function {
+  color: var(--vscode-function);
+}
+
+.syntax-string {
+  color: var(--vscode-string);
+}
+
+.syntax-type {
+  color: var(--vscode-type);
+}
+
+.syntax-variable {
+  color: var(--vscode-variable);
+}
+
+.syntax-comment {
+  color: var(--vscode-comment);
+  font-style: italic;
+}
+
+.syntax-number {
+  color: var(--vscode-number);
+}
+
+/* Activity bar icon */
+.activity-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vscode-text-muted);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.activity-icon:hover,
+.activity-icon.active {
+  color: var(--vscode-text);
+}
+
+.activity-icon.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--vscode-text);
+}
+
+/* Tab styling */
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--vscode-tabs);
+  border-right: 1px solid var(--vscode-border);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--vscode-text-muted);
+  transition: background 0.1s;
+}
+
+.tab:hover {
+  background: var(--vscode-tab-active);
+}
+
+.tab.active {
+  background: var(--vscode-tab-active);
+  color: var(--vscode-text);
+  border-top: 1px solid var(--vscode-accent);
+}
+
+/* Line numbers */
+.line-number {
+  color: var(--vscode-text-muted);
+  user-select: none;
+  text-align: right;
+  padding-right: 16px;
+  min-width: 50px;
+}
+
+/* Status bar */
+.status-bar {
+  background: var(--vscode-accent);
+  color: white;
+  font-size: 12px;
+  padding: 2px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ============================================
+   SHAKE ANIMATION - Easter Egg
+   ============================================ */
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+
+  10% {
+    transform: translateX(-10px) rotate(-2deg);
+  }
+
+  20% {
+    transform: translateX(10px) rotate(2deg);
+  }
+
+  30% {
+    transform: translateX(-10px) rotate(-2deg);
+  }
+
+  40% {
+    transform: translateX(10px) rotate(2deg);
+  }
+
+  50% {
+    transform: translateX(-8px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translateX(8px) rotate(1deg);
+  }
+
+  70% {
+    transform: translateX(-5px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translateX(5px) rotate(1deg);
+  }
+
+  90% {
+    transform: translateX(-2px) rotate(0);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Modal backdrop */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
